@@ -1,0 +1,233 @@
+/* ============================================
+RESET & BASE
+============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fc;
+    direction: rtl;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #1e2a41;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ============================================
+   HEADER
+============================================ */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header .brand {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0b121f;
+}
+
+.page-header .brand span {
+    color: #00a6a6;
+}
+
+.page-header .subtitle {
+    font-size: 15px;
+    color: #7c8491;
+    margin-top: 4px;
+}
+
+.page-header .line {
+    width: 60px;
+    height: 4px;
+    background: #00a6a6;
+    border-radius: 10px;
+    margin: 12px auto 0;
+}
+
+/* ============================================
+   CATEGORY TITLE
+============================================ */
+.category-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b121f;
+    margin: 36px 0 18px;
+    padding-right: 8px;
+    border-right: 5px solid #00a6a6;
+}
+
+/* ============================================
+   PRODUCT GRID
+============================================ */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+/* ============================================
+   PRODUCT CARD
+============================================ */
+.product-card {
+    background: #ffffff;
+    border: 1px solid #eef2f8;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.04);
+    border-color: #d0d8e4;
+}
+
+.product-card .image {
+    height: 200px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.product-card .image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-card .content {
+    padding: 16px 18px 20px;
+}
+
+.product-card .content .category {
+    font-size: 11px;
+    font-weight: 600;
+    color: #00a6a6;
+}
+
+.product-card .content .name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b121f;
+    margin: 4px 0 6px;
+    min-height: 44px;
+    line-height: 1.5;
+}
+
+.product-card .content .rating {
+    font-size: 13px;
+    color: #e6a823;
+    margin-bottom: 6px;
+}
+
+.product-card .content .rating span {
+    color: #7c8491;
+    font-size: 12px;
+}
+
+.product-card .content .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.product-card .content .old-price {
+    font-size: 12px;
+    color: #a5abb4;
+    text-decoration: line-through;
+}
+
+.product-card .content .price {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0b121f;
+}
+
+.product-card .content .add-btn {
+    background: #0b121f;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.product-card .content .add-btn:hover {
+    background: #00a6a6;
+}
+
+.product-card .badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #ff6b5f;
+    color: #fff;
+    padding: 2px 12px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.product-card {
+    position: relative;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 700px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 16px;
+    }
+
+    .product-card .content .name {
+        font-size: 13px;
+        min-height: 38px;
+    }
+
+    .product-card .content .price {
+        font-size: 15px;
+    }
+
+    .product-card .image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 460px) {
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .product-card .content {
+        padding: 12px 12px 16px;
+    }
+
+    .product-card .content .name {
+        font-size: 12px;
+        min-height: 32px;
+    }
+
+    .product-card .image {
+        height: 120px;
+        padding: 10px;
+    }
+}

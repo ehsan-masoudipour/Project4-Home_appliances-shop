@@ -1,0 +1,262 @@
+        /* ============================================
+           RESET & BASE
+        ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7fc;
+            direction: rtl;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #1e2a41;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* ============================================
+           CARD
+        ============================================ */
+        .track-card {
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f8;
+            padding: 50px 48px;
+        }
+
+        /* ============================================
+           HEADER
+        ============================================ */
+        .track-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .track-header .brand {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0b121f;
+        }
+
+        .track-header .brand span {
+            color: #00a6a6;
+        }
+
+        .track-header .subtitle {
+            font-size: 15px;
+            color: #7c8491;
+            margin-top: 4px;
+        }
+
+        /* ============================================
+           SEARCH FORM
+        ============================================ */
+        .track-form {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .track-form input {
+            flex: 1;
+            min-width: 200px;
+            height: 52px;
+            border: 1px solid #e2e7ef;
+            border-radius: 14px;
+            padding: 0 20px;
+            font-size: 15px;
+            background: #f8fafc;
+            transition: 0.2s;
+            outline: none;
+        }
+
+        .track-form input:focus {
+            border-color: #00a6a6;
+            box-shadow: 0 0 0 4px rgba(0, 166, 166, 0.08);
+            background: #fff;
+        }
+
+        .track-form button {
+            height: 52px;
+            padding: 0 36px;
+            border: none;
+            border-radius: 14px;
+            background: #0b121f;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+
+        .track-form button:hover {
+            background: #00a6a6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 166, 166, 0.2);
+        }
+
+        /* ============================================
+           ORDER INFO
+        ============================================ */
+        .order-info {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            border: 1px solid #eef2f8;
+        }
+
+        .order-info .item {
+            font-size: 14px;
+            color: #4a5f78;
+        }
+
+        .order-info .item strong {
+            color: #0b121f;
+            font-weight: 700;
+        }
+
+        /* ============================================
+           STATUS STEPS
+        ============================================ */
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 20px 0 10px;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            left: 30px;
+            height: 3px;
+            background: #e2e7ef;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            z-index: 1;
+            flex: 1;
+            text-align: center;
+        }
+
+        .step .circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            background: #e2e7ef;
+            color: #7c8491;
+            border: 3px solid #e2e7ef;
+            transition: 0.3s;
+        }
+
+        .step .circle.active {
+            background: #00a6a6;
+            border-color: #00a6a6;
+            color: #fff;
+        }
+
+        .step .circle.done {
+            background: #0b121f;
+            border-color: #0b121f;
+            color: #fff;
+        }
+
+        .step .label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #7c8491;
+        }
+
+        .step .label.active {
+            color: #00a6a6;
+        }
+
+        .step .label.done {
+            color: #0b121f;
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 700px) {
+            .track-card {
+                padding: 30px 20px;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 18px;
+                align-items: stretch;
+            }
+
+            .steps::before {
+                display: none;
+            }
+
+            .step {
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 14px;
+            }
+
+            .step .circle {
+                width: 36px;
+                height: 36px;
+                font-size: 12px;
+            }
+
+            .order-info {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .track-form {
+                flex-direction: column;
+            }
+
+            .track-form button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .track-card {
+                padding: 24px 16px;
+            }
+
+            .track-header .brand {
+                font-size: 22px;
+            }
+        }
